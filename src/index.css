@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: black;
+    color: #fff;
+    overflow-x: hidden;
+}
+.loading {
+    min-height: calc(100vh - 10rem);
+}
+
+.slick-list {
+    margin: 0 -5px;
+}
+
+.slick-slide>div {
+    padding: 0 5px;
+}
+
+.hero-container {
+    min-height: calc(100vh - 80px);
+}
+
+@media screen and (min-width: 768px) {
+    .hero-img {
+        mask-image: linear-gradient(to right,
+                rgba(0, 0, 0, 0) 10%,
+                rgba(0, 0, 0, 0.98) 100%);
+        -webkit-mask-image: linear-gradient(to right,
+                rgba(0, 0, 0, 0) 10%,
+                rgba(0, 0, 0, 1) 100%);
+    }
+}
