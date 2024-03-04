@@ -103,7 +103,7 @@ const Nav = () => {
             showSearch && " top-full opacity-100"
           } absolute z-20 -top-full transition-all opacity-0 left-4 sm:block sm:static sm:opacity-100`}
         >
-          <div className="flex justify-center items-center gap-2">
+          <div className="flex justify-center w-full items-center gap-2">
             <input
               type="text"
               placeholder="Search"
