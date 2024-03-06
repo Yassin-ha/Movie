@@ -33,6 +33,7 @@ const Nav = () => {
     navigate(`/results`, {
       state: { resultsMovies: resultsMovies, resultsTv: resultsTv },
     });
+    setShowSearch(false)
   };
 
   const links = [
@@ -105,13 +106,13 @@ const Nav = () => {
           onSubmit={handleSubmit}
           className={`${
             showSearch && " top-full opacity-100"
-          } absolute z-20 -top-full transition-all opacity-0 left-4 sm:block sm:static sm:opacity-100`}
+          } absolute z-20 -top-full transition-all opacity-0 left-4 w-[90%] sm:w-fit sm:block sm:static sm:opacity-100`}
         >
-          <div className="flex justify-center w-full items-center gap-2 bg-white rounded-md relative overflow-hidden">
+          <div className="flex w-full items-center gap-2 bg-white rounded-md relative overflow-hidden">
             <input
               type="text"
               placeholder="Search"
-              className=" px-3 py-2 sm:py-1 outline-none text-black w-[285px] sm:w-fit"
+              className=" px-3 py-2 sm:py-1 outline-none text-black sm:w-fit"
               value={searchTerm}
               onChange={handleChange}
             />

@@ -39,9 +39,6 @@ body {
     left: -55px;
 }
 
-.hero-container {
-    min-height: calc(100vh - 80px);
-}
 
 @media screen and (min-width: 768px) {
     .hero-img {
@@ -52,4 +49,9 @@ body {
                 rgba(0, 0, 0, 0) 10%,
                 rgba(0, 0, 0, 1) 100%);
     }
+}
+@media screen and (min-width: 426px) {
+    .hero-container {
+        min-height: calc(100vh - 80px);
+    }    
 }
