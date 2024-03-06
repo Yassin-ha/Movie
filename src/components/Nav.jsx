@@ -115,7 +115,7 @@ const Nav = () => {
               value={searchTerm}
               onChange={handleChange}
             />
-            <button type="submit" className={`${searchTerm ? " opacity-100 bottom-3" : " opacity-0 -bottom-full"} duration-500 absolute right-2`}>
+            <button type="submit" className={`${searchTerm ? " opacity-100 bottom-3 sm:bottom-2" : " opacity-0 -bottom-full"} duration-500 absolute right-2`}>
               <FaSearch className=" text-red-500" />
             </button>
           </div>
