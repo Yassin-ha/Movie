@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Card from "./Card";
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 
 const apiKey = "ce60cdb41e30dc6b3b150fac4a3f5b77";
 
 // eslint-disable-next-line react/prop-types
 const Movie = ({type, sortedBy, link, title}) => {
     const [data, setData] = useState([]);
+    
 
     const fetchData = async () => {
         try {
@@ -23,9 +25,11 @@ const Movie = ({type, sortedBy, link, title}) => {
     }, []);
 
     var settings = {
-        infinite: false,
+        infinite: true,
         speed: 500,
         slidesToShow: 5,
+        nextArrow: <FaAngleRight /> ,
+        prevArrow: <FaAngleLeft />,
         slidesToScroll: 5,
         responsive: [
             {
@@ -59,7 +63,7 @@ const Movie = ({type, sortedBy, link, title}) => {
     return (
         <section className="py-9 ">
             <h2 className="pb-10 text-2xl">{title}</h2>
-            <Slider {...settings} className={` gap-1 `}>
+            <Slider {...settings} className={` gap-1 mx-4 `}>
                 {data && data.map((show) => {
                     return <Card show={show} key={show.id} link={link} />;
                 })}

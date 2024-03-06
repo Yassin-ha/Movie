@@ -20,7 +20,7 @@ const Pagination = ({setCurrentPage, currentPage}) => {
             }
             forcePage={(currentPage - 1)}
             onPageChange={handlePageClick}
-            pageRangeDisplayed={5}
+            pageRangeDisplayed={4}
             pageCount={500}
             previousLabel={
                 <span className="flex h-10 w-10 justify-center items-center">

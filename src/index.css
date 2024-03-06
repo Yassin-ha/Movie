@@ -19,6 +19,25 @@ body {
 .slick-slide>div {
     padding: 0 5px;
 }
+.slick-slider svg {
+    color: red;
+    width: 60px;
+    height: 60px;
+    z-index: 1111;
+    transition-duration: .5s;
+}
+.slick-slider svg:hover {
+    color: rgb(159, 11, 11);
+}
+.slick-next, .slick-prev {
+    top: 45%;
+}
+.slick-next {
+    right: -55px;
+}
+.slick-prev {
+    left: -55px;
+}
 
 .hero-container {
     min-height: calc(100vh - 80px);

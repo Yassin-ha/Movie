@@ -18,6 +18,7 @@ const Nav = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(!searchTerm) return
     const respMovies = await fetch(
       `https://api.themoviedb.org/3/search/movie?query=${searchTerm}&api_key=${apiKey}`
     );
@@ -48,9 +49,9 @@ const Nav = () => {
     SetShowMenu(false);
   };
   const handleChange = (e) => {
-    setSearchTerm(e.target.value)
-    setActive("")
-  }
+    setSearchTerm(e.target.value);
+    setActive("");
+  };
 
   return (
     <nav className="container h-20 flex items-center mr-auto relative ">
@@ -77,7 +78,10 @@ const Nav = () => {
         >
           {links.map((link) => {
             return (
-              <li key={link.id} className={` pl-2 pb-2 sm:pl-0 sm:pb-0 `}>
+              <li
+                key={link.id}
+                className={` pl-2 pb-2 sm:pl-0 sm:pb-0 font-semibold `}
+              >
                 <Link
                   onClick={() => setActive(link.name)}
                   className={`${
@@ -103,19 +107,17 @@ const Nav = () => {
             showSearch && " top-full opacity-100"
           } absolute z-20 -top-full transition-all opacity-0 left-4 sm:block sm:static sm:opacity-100`}
         >
-          <div className="flex justify-center w-full items-center gap-2">
+          <div className="flex justify-center w-full items-center gap-2 bg-white rounded-md relative overflow-hidden">
             <input
               type="text"
               placeholder="Search"
-              className=" rounded-l-md px-3 py-1 outline-none text-black"
+              className=" px-3 py-2 sm:py-1 outline-none text-black w-[285px] sm:w-fit"
               value={searchTerm}
               onChange={handleChange}
             />
-            {searchTerm && (
-              <button type="submit">
-                <FaSearch className=" text-red-500" />
-              </button>
-            )}
+            <button type="submit" className={`${searchTerm ? " opacity-100 bottom-3" : " opacity-0 -bottom-full"} duration-500 absolute right-2`}>
+              <FaSearch className=" text-red-500" />
+            </button>
           </div>
         </form>
       </div>
