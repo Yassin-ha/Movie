@@ -112,7 +112,7 @@ const Nav = () => {
             <input
               type="text"
               placeholder="Search"
-              className=" px-3 py-2 sm:py-1 outline-none text-black sm:w-fit"
+              className=" px-3 py-2 sm:py-1 outline-none w-11/12 text-black"
               value={searchTerm}
               onChange={handleChange}
             />
