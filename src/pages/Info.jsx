@@ -15,6 +15,8 @@ const Info = ({type, link}) => {
     const [loading, setLoading] = useState(true);
     const { id } = useParams();
 
+    console.log(Show);
+
     const fetchData = async () => {
         setLoading(true);
         try {
@@ -72,7 +74,7 @@ const Info = ({type, link}) => {
         );
     }
 
-    const { backdrop_path, title, name, overview, release_date, genres, adult } = Show;
+    const { backdrop_path, title, name, overview, release_date, genres, adult, first_air_date } = Show;
     return (
         <section className="">
             <div className="hero-container relative flex flex-col-reverse">
@@ -90,7 +92,7 @@ const Info = ({type, link}) => {
                     </p>
                     <p className=" py-4">{overview}</p>
                     <p>
-                        <span>{release_date}</span>
+                        <span className=" text-gray-300">{release_date || first_air_date}</span>
                         {adult && <span>+18</span>}
                     </p>
                 </div>
