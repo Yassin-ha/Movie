@@ -18,7 +18,7 @@ const Nav = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(!searchTerm) return
+    if (!searchTerm) return;
     const respMovies = await fetch(
       `https://api.themoviedb.org/3/search/movie?query=${searchTerm}&api_key=${apiKey}`
     );
@@ -33,7 +33,7 @@ const Nav = () => {
     navigate(`/results`, {
       state: { resultsMovies: resultsMovies, resultsTv: resultsTv },
     });
-    setShowSearch(false)
+    setShowSearch(false);
   };
 
   const links = [
@@ -84,7 +84,7 @@ const Nav = () => {
                 className={` pl-2 pb-2 sm:pl-0 sm:pb-0 font-semibold `}
               >
                 <Link
-                  onClick={() => setActive(link.name)}
+                  onClick={()=> {setActive(link.name); SetShowMenu(false) }}
                   className={`${
                     active === link.name ? "text-red-500" : undefined
                   }`}
@@ -116,7 +116,14 @@ const Nav = () => {
               value={searchTerm}
               onChange={handleChange}
             />
-            <button type="submit" className={`${searchTerm ? " opacity-100 bottom-3 sm:bottom-2" : " opacity-0 -bottom-full"} duration-500 absolute right-2`}>
+            <button
+              type="submit"
+              className={`${
+                searchTerm
+                  ? " opacity-100 bottom-3 sm:bottom-2"
+                  : " opacity-0 -bottom-full"
+              } duration-500 absolute right-2`}
+            >
               <FaSearch className=" text-red-500" />
             </button>
           </div>
